@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لعبة اللوغاريتمات</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="start" class="container active">
+    <h1>🎮 لعبة اللوغاريتمات</h1>
+    <button onclick="goToName()">ابدأ</button>
+</div>
+
+<div id="namePage" class="container">
+    <h2>أدخل اسمك لبدء اللعبة</h2>
+    <input id="playerName" type="text" placeholder="اسمك">
+    <br>
+    <button onclick="startGame()">ابدأ اللعب</button>
+</div>
+
+<div id="game" class="container">
+    <h2 id="timer">⏳ 30</h2>
+    <div id="question" class="question-box"></div>
+    <div id="options" class="options"></div>
+</div>
+
+<div id="scorePage" class="container">
+    <h1>النتيجة</h1>
+    <h2 id="finalScore"></h2>
+    <h3>🏆 لوحة المتصدرين</h3>
+    <table id="scoreTable"></table>
+    <button onclick="restart()">الرجوع للصفحة الرئيسية</button>
+</div>
+
+
+<div id="namePage" class="container">...</div>
+<div id="game" class="container">...</div>
+<div id="scorePage" class="container">...</div>
+
+<!-- Footer ثابت باسمك -->
+<footer id="creatorFooter">
+    من تصميم: جمانة دهان
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

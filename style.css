@@ -1,0 +1,123 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #6a11cb, #9b59b6); /* تدرج بنفسجي */
+    font-family: "Tajawal", sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* خلفية متحركة مع أشكال رياضية */
+body::before {
+    content: "∑ π √ ∞ log ∫";
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    font-size: 100px;
+    color: rgba(255,255,255,0.05);
+    white-space: nowrap;
+    transform: rotate(-45deg);
+    animation: float 25s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(-100%) rotate(-45deg);}
+    100% { transform: translateY(150%) rotate(-45deg);}
+}
+
+/* باقي التنسيقات كما في نسخة الجوال */
+.container {
+    max-width: 480px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px;
+    display: none;
+}
+.active { display: block; }
+button {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #fff;
+    color: #2575fc;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: 0.2s;
+}
+button:hover { transform: scale(1.05); }
+.question-box {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    background: white;
+    color: #333;
+    font-size: 18px;
+}
+#timer {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+table {
+    width: 100%;
+    margin-top: 15px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 5px;
+    font-size: 18px;
+}
+td, th { padding: 8px; text-align: center; }
+input {
+    width: 90%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+}
+/* الحاوية الخاصة بالرموز المتحركة */
+.symbol {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(255,255,255,0.2);
+    pointer-events: none;
+    user-select: none;
+    animation: floatSymbol linear infinite;
+    animation-iteration-count: 1;
+}
+
+@keyframes floatSymbol {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+    50% { opacity: 0.5; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+#question img {
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+#creatorFooter {
+    position: fixed;       /* يبقى ثابتًا عند أسفل الشاشة */
+    bottom: 0;             /* أسفل الصفحة */
+    width: 100%;           /* يمتد عبر الشاشة بالكامل */
+    text-align: center;    /* توسيط النص */
+    color: #fff;  
+    background-color: #ffffff37;         /* لون النص أبيض */
+    padding: 5px 0;        /* مسافة داخلية */
+    font-size: 25px;       /* حجم الخط */
+    z-index: 1000;         /* فوق باقي العناصر */
+    pointer-events: none;  /* لا يؤثر على النقر على باقي اللعبة */
+}
